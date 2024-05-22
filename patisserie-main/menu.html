@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <link rel="icon" href="https://th.bing.com/th/id/R.a07fc8d7e3a69a2cafe005e991a98038?rik=O8Kb4av8Az%2bECw&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTj%2fX6a%2fKTjX6aAgc.jpg&ehk=YlMEX7Ocz79KnFBenY8RWw5p3Z0U%2bNL%2fCLflZriy1jk%3d&risl=&pid=ImgRaw&r=0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            background: url("https://th.bing.com/th/id/OIP.6ZVXjHiOsm4PtdGod82nKQHaM-?pid=ImgDet&w=179&h=313&c=7&dpr=1.3");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .nav {
+            top: 0;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 100px;
+            line-height: 100px;
+            background: linear-gradient(rgba(226, 101, 172, 0.6), transparent);
+        }
+
+        .nav-logo p {
+            color: #6C0277;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .nav-menu ul {
+            display: flex;
+        }
+
+        .nav-menu ul li {
+            list-style-type: none;
+        }
+
+        .nav-menu ul li .link {
+            text-decoration: none;
+            font-weight: 500;
+            color: #6C0277;
+            padding-bottom: 15px;
+            margin: 0 25px;
+        }
+
+        .link:hover,
+        .active {
+            border-bottom: 2px solid #fff;
+        }
+
+        .nav-button .btn {
+            width: 130px;
+            height: 40px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.4);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: .3s ease;
+            color: #6C0277;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        h1 {
+            padding-top: 100px;
+            color: #6C0277;
+            font-size: 50px;
+            text-align: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        div {
+            display: inline-block;
+        }
+
+        .mg,
+        .sus,
+        .ali,
+        .pn,
+        .fr,
+        .vt,
+        .pb,
+        .ce,
+        .cf {
+            margin-top: 50px;
+            margin-left: 150px;
+            margin-bottom: 50px;
+            display: inline-block;
+            vertical-align: top;
+            width: 20%;
+            padding: 10px;
+        }
+
+        h4 {
+            color: #6C0277;
+            font-size: larger;
+        }
+
+        section p {
+            font-size: 20px;
+            color: rgb(66, 66, 66);
+        }
+
+        section.rdv {
+            margin-top: 50px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        section.rdv p {
+            display: inline-block;
+            background-color: rgb(235, 187, 201);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            padding: 20px;
+            color: #6C0277;
+        }
+
+        section div img {
+            margin-top: 5px;
+        }
+
+        section div {
+            text-align: center;
+            border-radius: 20px;
+            transition: .5s;
+        }
+
+        section div:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: transparent;
+            backdrop-filter: blur(50px);
+        }
+
+        footer {
+            background: linear-gradient(transparent, rgba(226, 101, 172, 0.6));
+            padding: 30px;
+            width: 100%;
+            text-align: center;
+        }
+
+        footer h3 {
+            margin-bottom: 20px;
+            color: #6C0277;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #6C0277;
+            padding-right: 80px;
+        }
+
+        #menubtn {
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            position: fixed;
+            right: 30px;
+            top: 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        #menubtn img {
+            width: 50px;
+            margin-top: 0px;
+        }
+
+        #sidenav {
+            width: 200px;
+            height: 100vh;
+            position: fixed;
+            right: -250px;
+            top: 0;
+            background: #6C0277;
+            transition: 0.5s;
+            z-index: 1;
+        }
+
+        #sidenav nav ul li {
+            list-style: none;
+            margin: 50px 20px;
+        }
+
+        #sidenav nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        span {
+            color: whitesmoke;
+        }
+
+        button {
+            background-color: rgba(226, 101, 172, 0.6);
+            color: #6C0277;
+            border-radius: 6px;
+            border: none;
+            width: 20%;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgba(226, 101, 172, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div id="sidenav">
+        <nav>
+            <ul>
+                <li><a href="#a">Red Velvet: </a><span id="a"></span></li>
+                <li><a href="#a">Brookie: </a><span id="b"></span></li>
+                <li><a href="#a">Tiramisu: </a><span id="c"></span></li>
+                <li><a href="#a">Chocolate Cake: </a><span id="d"></span></li>
+                <li><a href="#a">Eclair: </a><span id="e"></span></li>
+                <li><a href="#a">Cookies: </a><span id="f"></span></li>
+                <li><a href="#a">Strawberry Cake: </a><span id="g"></span></li>
+                <li><a href="#a">Raspberry Charlotte Cake: </a><span id="h"></span></li>
+                <li><a href="#a">Cheesecake: </a><span id="i"></span></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="menubtn">
+        <img src="Supermarket.png" id="menu">
+    </div>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>DELIGHTS</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="home.html" class="link">Home</a></li>
+                    <li><a href="menu.html" class="link active">Menu</a></li>
+                    <li><a href="contact.html" class="link">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <a href="login.html"><button class="btn" id="registerBtn">Log Out</button></a>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu"></i>
+            </div>
+        </nav>
+        <main>
+            <h1>Menu</h1>
+            <section>
+                <div class="mg">
+                    <img src="https://chelsweets.com/wp-content/uploads/2013/12/142.jpg?w=388" title="red velvet" height="220px" width="260px" style="border-radius: 20px;">
+                    <h4>Red Velvet - 100dh</h4>
+                    <p>Rich, moist texture with cocoa powder, oil, sugar-free sweetener, soy milk, vanilla extract, red food coloring, and a touch of vinegar.</p>
+                    <br>
+                    <button onclick="addToCart(0)">Add to Cart</button>
+                    <button onclick="removeFromCart(0)">Remove from Cart</button>
+                </div>
+                <div class="sus">
+                    <img src="https://th.bing.com/th/id/OIP.PB-E-5i_fz05LrUV1NCDQwHaHa?w=195&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7" title="Brookie" height="220px" width="260px" style="border-radius: 20px;">
+                    <h4>Brookie - 100dh</h4>
+                    <p>Combination of a chewy chocolate chip cookie and a fudgy brownie, topped with chocolate ganache and sprinkled with sea salt.</p>
+                    <br>
+                    <button onclick="addToCart(1)">Add to Cart</button>
+                    <button onclick="removeFromCart(1)">Remove from Cart</button>
+                </div>
+                <div class="ali">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3fR0WXbJTQ0wNMAwX7BEWUdYd_tfyr7Qlbw&s" title="Tiramisu" height="220px" width="260px" style="border-radius: 20px;">
+                    <h4>Tiramisu - 100dh</h4>
+                    <p>Layered dessert with espresso-soaked ladyfingers, mascarpone cheese, and a dusting of cocoa powder.</p>
+                    <br>
+                    <button onclick="addToCart(2)">Add to Cart</button>
+                    <button onclick="removeFromCart(2)">Remove from Cart</button>
+                </div>
+                <div class="pn">
+                    <img src="image 4.jpg" title="Chocolate Cake" height="220px" width="260px" style="border-radius: 20px;">
+                    <h4>Chocolate Cake - 80dh</h4>
+                    <p>Decadent chocolate cake with layers of rich chocolate ganache and a glossy chocolate glaze.</p>
+                    <br>
+                    <button onclick="addToCart(3)">Add to Cart</button>
+                    <button onclick="removeFromCart(3)">Remove from Cart</button>
+                </div>
+                <div class="fr">
+                    <img src="image 3.jpg" title="Eclair" height="220px" width="260px" style="border-radius: 20px;">
+                    <h4>Éclair - 80dh</h4>
+                    <p>Pastry filled with rich custard and topped with a smooth chocolate glaze.</p>
+                    <br>
+                    <button onclick="addToCart(4)">Add to Cart</button>
+                    <button onclick="removeFromCart(4)">Remove from Cart</button>
+                </div>
+                <div class="vt">
+                    <img src="https://www.foodandwine.com/thmb/4_UScMzHQCxZzACBITHHmT_EM3U=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Chocolate-Chunk-Halwah-Cookies-FT-RECIPE0923-1f8df755df6d468da98887aa846a2fe3.jpg" title="Cookies" height="220px" width="260px" style="border-radius: 20px;">
+                    <h4>Cookies - 100dh</h4>
+                    <p>Soft, chewy cookies packed with chocolate chips and a hint of vanilla.</p>
+                    <br>
+                    <button onclick="addToCart(5)">Add to Cart</button>
+                    <button onclick="removeFromCart(5)">Remove from Cart</button>
+                </div>
+                <div class="pb">
+                    <img src="image 2.jpg" title="Strawberry Cake" height="220px" width="260px" style="border-radius: 20px;">
+                    <h4>Strawberry Cake - 150dh</h4>
+                    <p>Fluffy cake layers filled with fresh strawberries and a light whipped cream frosting.</p>
+                    <br>
+                    <button onclick="addToCart(6)">Add to Cart</button>
+                    <button onclick="removeFromCart(6)">Remove from Cart</button>
+                </div>
+                <div class="ce">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDgj5d5oBS0CT5lOXqToqVRZ3rAM0At9MalakqBcwsEGswWb8SM-T7OjsiFfqrmQl9HAg&usqp=CAU" title="Raspberry Charlotte Cake" height="220px" width="260px" style="border-radius: 20px;">
+                    <h4>Raspberry Charlotte Cake - 200dh</h4>
+                    <p>Elegant cake with layers of raspberry mousse, sponge cake, and a ladyfinger crust.</p>
+                    <br>
+                    <button onclick="addToCart(7)">Add to Cart</button>
+                    <button onclick="removeFromCart(7)">Remove from Cart</button>
+                </div>
+                <div class="cf">
+                    <img src="image 1.jpg" title="Cheesecake" height="220px" width="260px" style="border-radius: 20px;">
+                    <h4>Cheesecake - 150dh</h4>
+                    <p>Creamy cheesecake with a graham cracker crust, topped with a rich berry compote.</p>
+                    <br>
+                    <button onclick="addToCart(8)">Add to Cart</button>
+                    <button onclick="removeFromCart(8)">Remove from Cart</button>
+                </div>
+            </section>
+            <section class="rdv" style="cursor: pointer;" onclick="finalizeOrder()">
+                <p><b>Commander</b></p>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <h3 id="contact">Contact Us:</h3>
+        <a href="tel:+212 615599326">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+            </svg>
+            number: +212 615599326
+        </a>
+        <a href="mailto:hayatlakbakbi448@gmail.com">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+            </svg>
+            email: hayatlakbakbi448@gmail.com
+        </a>
+        <a href="https://maps.app.goo.gl/ZjT81wLhXEnA2Rak9" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+            </svg>
+            to take away: massira 3 bloc c 535
+        </a>
+        <a href="https://www.instagram.com/hayatlak/?igsh=dzg1ejVqcmVvcm0%3D" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+              </svg>
+            instagram: hayatlak
+        </a>
+    </footer>
+    <script>
+        var prices = [5, 7, 6, 8, 4, 3, 6, 8, 7];
+        var quantities = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+        var productIds = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
+
+        function updateCartDisplay() {
+            productIds.forEach((id, index) => {
+                document.getElementById(id).textContent = quantities[index];
+            });
+        }
+
+        function addToCart(index) {
+            quantities[index]++;
+            updateCartDisplay();
+        }
+
+        function removeFromCart(index) {
+            if (quantities[index] > 0) {
+                quantities[index]--;
+            } else {
+                alert("This product is not in your cart.");
+            }
+            updateCartDisplay();
+        }
+
+        function finalizeOrder() {
+            let totalPrice = 0;
+            quantities.forEach((quantity, index) => {
+                totalPrice += quantity * prices[index];
+            });
+            if(totalPrice===0){
+                alert("You didn't order anything!!!");
+            }else{
+                alert("Total Price: dh" + totalPrice);
+                window.location.href="thank u.html";
+            }
+        }
+
+        var menu = document.getElementById("menu");
+        var sidenav = document.getElementById("sidenav");
+        var menuStatus = 0;
+        menu.onclick = function() {
+            if (menuStatus === 0) {
+                sidenav.style.right = "0px";
+                menuStatus = 1;
+            } else {
+                sidenav.style.right = "-250px";
+                menuStatus = 0;
+            }
+        }
+    </script>
+</body>
+</html>
